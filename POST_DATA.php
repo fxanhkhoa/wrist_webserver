@@ -20,15 +20,15 @@
 	
 	if ($BEAT < 60) 
 	{
-		$query = "UPDATE data set HEART_STATE = 'TIM DAP QUA CHAM', STATE = 1 where ID='$ID'";
+		$query = "UPDATE data set HEART_STATE = 'TIM DAP QUA CHAM', STATE = 0 where ID='$ID'";
 	}
 	else if ($BEAT > 100) 
 	{
-		$query = "UPDATE data set HEART_STATE_STATE = 'TIM DAP NHANH', STATE = 1 where ID='$ID'";
+		$query = "UPDATE data set HEART_STATE_STATE = 'TIM DAP NHANH', STATE = 0 where ID='$ID'";
 	}
 	else if (($BEAT >= 60) && ($BEAT <= 100))
 	{
-		$query = "UPDATE data set HEART_STATE = 'TIM DAP BINH THUONG', STATE = 0 where ID='$ID'";
+		$query = "UPDATE data set HEART_STATE = 'TIM DAP BINH THUONG', STATE = 1 where ID='$ID'";
 	}
 	
 	echo $query.'\n';
@@ -41,11 +41,11 @@
 	
     if (($SPO2 >= 88) && ($SPO2 <= 100))
 	{
-		$query = "UPDATE data set LUNG_STATE = 'OXY BINH THUONG', STATE = 0 where ID='$ID'";
+		$query = "UPDATE data set LUNG_STATE = 'OXY BINH THUONG', STATE = 1 where ID='$ID'";
 	}
 	else if (($SPO2 < 88))
 	{
-		$query = "UPDATE data set LUNG_STATE = 'OXY QUA THAP', STATE = 1 where ID='$ID'";
+		$query = "UPDATE data set LUNG_STATE = 'OXY QUA THAP', STATE = 0 where ID='$ID'";
 	}
 	echo $query.'\n';
 	
